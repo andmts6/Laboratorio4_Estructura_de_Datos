@@ -123,7 +123,7 @@ Pair * nextTreeMap(TreeMap * tree)
             }
         if(aux ==NULL) return NULL;
         tree->current = aux->parent;
-        return aux->pair;
+        return aux->parent->pair;
     }
     else
     {    
