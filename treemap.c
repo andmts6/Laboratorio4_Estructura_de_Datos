@@ -113,11 +113,11 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-    key = tree->current->key;
-    aux = tree->current->parent;
-    while(aux != NULL && aux->key < key)
+    Pair *key = tree->current->pair;
+    TreeNode *aux = tree->current->parent;
+    while(aux != NULL && aux->pair < key)
         {
-            aux->parent;
+            aux = aux->parent;
         }
     return aux->pair;
 }
