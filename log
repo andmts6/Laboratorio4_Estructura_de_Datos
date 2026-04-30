@@ -19,3 +19,34 @@ Thu Apr 30 08:09:02 PM UTC 2026:
  tests:  3|7
 total_score: 5/60
 d1c9851
+Thu Apr 30 08:13:01 PM UTC 2026: 
+ treemap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:116:5: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  116 |     key = tree->current->key;
+      |     ^~~
+      |     key_t
+treemap.c:116:5: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:116:24: error: ‘TreeNode’ has no member named ‘key’
+  116 |     key = tree->current->key;
+      |                        ^~
+treemap.c:117:5: error: ‘aux’ undeclared (first use in this function)
+  117 |     aux = map->current->parent;
+      |     ^~~
+treemap.c:117:11: error: ‘map’ undeclared (first use in this function)
+  117 |     aux = map->current->parent;
+      |           ^~~
+treemap.c:120:24: error: expected ‘;’ before ‘}’ token
+  120 |             aux->parent
+      |                        ^
+      |                        ;
+  121 |         }
+      |         ~               
+treemap.c:123:1: error: control reaches end of non-void function [-Werror=return-type]
+  123 | }
+      | ^
+cc1: all warnings being treated as errors
+3b0cf49
