@@ -127,9 +127,9 @@ Pair * nextTreeMap(TreeMap * tree)
     {
         while(tree->current->right != NULL)
             {
-                tree->current = tree->current->right
+                tree->current = tree->current->right;
             }
-        tree->current->pair;
+        return tree->current->pair;
     }
 }
 
