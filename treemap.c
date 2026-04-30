@@ -103,7 +103,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * firstTreeMap(TreeMap * tree) 
 {
-    TreeNode *aux = tree.root;
+    TreeNode *aux = tree->root;
     while(aux->left !=NULL)
         {
             aux = aux->left;
