@@ -124,11 +124,12 @@ Pair * nextTreeMap(TreeMap * tree)
         return aux->pair;
     }
     else
-    {
-        while(tree->current->right != NULL)
-            {
-                tree->current = tree->current->right;
-            }
+    {    
+        tree->current = tree->current->right;
+         while(tree->current->left != NULL)
+           {
+                tree->current = tree->current->left;
+           }
         return tree->current->pair;
     }
 }
