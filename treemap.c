@@ -115,11 +115,13 @@ Pair * nextTreeMap(TreeMap * tree)
 {
     if(tree->current->right ==NULL)
     {
+        Pair *key = tree->current->pair;
         TreeNode *aux = tree->current->parent;
-        while(aux != NULL)
+        while(aux != NULL && aux->pair < key)
             {
                 aux = aux->parent;
             }
+        if(aux ==NULL) return NULL;
         return aux->pair;
     }
     else
@@ -129,6 +131,7 @@ Pair * nextTreeMap(TreeMap * tree)
            {
                 tree->current = tree->current->left;
            }
+        
         return tree->current->pair;
     }
 }
