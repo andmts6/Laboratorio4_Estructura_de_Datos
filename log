@@ -102,3 +102,23 @@ Thu Apr 30 08:16:38 PM UTC 2026:
  1 file changed, 4 insertions(+), 4 deletions(-)
  tests:  0|0
 82e96b3
+Thu Apr 30 08:19:08 PM UTC 2026: 
+ treemap.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:130:53: error: expected ‘;’ before ‘}’ token
+  130 |                 tree->current = tree->current->right
+      |                                                     ^
+      |                                                     ;
+  131 |             }
+      |             ~                                        
+treemap.c:132:22: error: statement with no effect [-Werror=unused-value]
+  132 |         tree->current->pair;
+      |         ~~~~~~~~~~~~~^~~~~~
+treemap.c:134:1: error: control reaches end of non-void function [-Werror=return-type]
+  134 | }
+      | ^
+cc1: all warnings being treated as errors
+95858bd
