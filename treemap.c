@@ -70,9 +70,15 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 // Para obtener el nodo tiene que, a partir del nodo x, irse por la rama izquierda hasta llegar al final del subárbol. 
 // Si x no tiene hijo izquierdo se retorna el mismo nodo.
 
-TreeNode * minimum(TreeNode * x){
+TreeNode * minimum(TreeNode * x)
+{
+    if(X->left == NULL) return NULL;
 
-    return NULL;
+    while(X->left != NULL)
+        {
+            x = x->left;
+        }
+    return x;
 }
 
 // 5.- Implemente la función void removeNode(TreeMap * tree, TreeNode* node). 
@@ -124,17 +130,15 @@ Pair * nextTreeMap(TreeMap * tree)
         if(aux->parent ==NULL) return NULL;
         tree->current = aux->parent;
         return aux->parent->pair;
-    }
-    else
-    {    
-        aux = aux->right;
-         while(aux->left != NULL)
-           {
-                aux = aux->left;
-           }
-        tree->current = aux;
-        return aux->pair;
-    }
+    }  
+    
+    aux = aux->right;
+    while(aux->left != NULL)
+        {
+           aux = aux->left;
+        }
+    tree->current = aux;
+    return aux->pair;
 }
 
 // 7. La función Pair* upperBound(TreeMap* tree, void* key) retorna el Pair con clave igual a key. 
