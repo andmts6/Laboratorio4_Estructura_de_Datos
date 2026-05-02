@@ -155,6 +155,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
         }
         if(tree->lower_than(aux->pair->key,node->pair->key)==1) aux->right = a;
         else aux->left = a;
+        a->parent = aux;
         free(node);
     }
 }
