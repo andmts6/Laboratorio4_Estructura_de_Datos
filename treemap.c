@@ -233,7 +233,19 @@ Pair * upperBound(TreeMap * tree, void* key)
 {
     Pair *x = searchTreeMap(tree, key);
     if(x != NULL) return x;
-    return NULL;
+    TreeNode *aux = tree->root;
+    if(aux==NULL) return NULL;
+    while(aux!=NULL)
+        {    
+            
+            if(tree->lower_than(aux->pair->key,key)==1) aux = aux->right;
+            else if(tree->lower_than(key,aux->pair->key)==1)
+            {
+                aux = aux->left;
+                x = aux->parent;
+            }
+        }
+    return x;
 }
 
 
