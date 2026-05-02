@@ -44,9 +44,11 @@ TreeNode * createTreeNode(void* key, void * value) {
     
 TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) 
 {
-
-    //map->lower_than = lower_than;
-    return NULL;
+    TreeMap *Tree = (TreeMap *) malloc (sizeof(TreeMap));
+    Tree->root =NULL;
+    Tree->current =NULL;
+    Tree->lower_than = lower_than;
+    return Tree;
 }
 
 // 2. Implemente la función Pair* searchTreeMap(TreeMap* tree, void* key), 
@@ -128,7 +130,14 @@ void removeNode(TreeMap * tree, TreeNode* node)
 {    
     if(node->left==NULL && node->right==NULL)
     {
-        
+        //caso raíz
+        if(node->parent == NULL)
+            {
+                tree->root = NULL;
+                free(node);
+                return;
+            }
+        //normal
         if(tree->lower_than(node->parent->pair->key,node->pair->key)==1) node->parent->right = NULL;
         else node->parent->left = NULL;
         free(node);
@@ -158,6 +167,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
                     a = a->right;
                 }
         }
+        //caso raíz
         if(node->parent == NULL)
             {
                 tree->root = a;
