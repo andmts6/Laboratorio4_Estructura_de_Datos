@@ -268,3 +268,30 @@ treemap.c:101:19: error: assignment to ‘TreeNode *’ from incompatible pointe
   101 |     tree->current =x;
       |                   ^
 7d22f6b
+Sat May  2 03:51:57 AM UTC 2026: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:97:5: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+   97 |     treeNode *x = createTreeNode(key, data);
+      |     ^~~~~~~~
+      |     TreeNode
+treemap.c:97:39: error: ‘data’ undeclared (first use in this function)
+   97 |     treeNode *x = createTreeNode(key, data);
+      |                                       ^~~~
+treemap.c:97:39: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:98:60: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+   98 |     if(tree->lower_than(aux->pair->key,key)==1) aux->right = x;
+      |                                                            ^
+treemap.c:99:20: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+   99 |     else aux->left = x;
+      |                    ^
+treemap.c:100:6: error: request for member ‘parent’ in something not a structure or union
+  100 |     x->parent = aux;
+      |      ^~
+treemap.c:101:19: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+  101 |     tree->current =x;
+      |                   ^
+f795c7d
