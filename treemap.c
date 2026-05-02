@@ -59,9 +59,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     if(tree->current==NULL) return NULL;
     while(tree->current!=NULL)
         {
-            if(key == tree->current->key) return tree->current->pair;
-            else if(key < tree->current->key) tree->current = tree->current->left;
-            else if(key > tree->current->key) tree->current = tree->current->right;
+            if(key == tree->current->pair->key) return tree->current->pair;
+            else if(key < tree->current->pair->key) tree->current = tree->current->left;
+            else if(key > tree->current->pair->key) tree->current = tree->current->right;
         }
     return NULL;
 }
