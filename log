@@ -301,3 +301,37 @@ Sat May  2 03:53:38 AM UTC 2026:
  tests:  19|3
 total_score: 35/60
 e6a0001
+Sat May  2 04:21:30 AM UTC 2026: 
+ treemap.c | 34 ++++++++++++++++++++++++++++++++--
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:144:26: error: invalid initializer
+  144 |             TreeNode a = node->right;
+      |                          ^~~~
+treemap.c:145:25: error: incompatible type for argument 1 of ‘minimum’
+  145 |             a = minimum(a);
+      |                         ^
+      |                         |
+      |                         TreeNode
+treemap.c:109:31: note: expected ‘TreeNode *’ but argument is of type ‘TreeNode’
+  109 | TreeNode * minimum(TreeNode * x)
+      |                    ~~~~~~~~~~~^
+treemap.c:149:26: error: invalid initializer
+  149 |             TreeNode a = node->left;
+      |                          ^~~~
+treemap.c:150:20: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  150 |             while(a->right != NULL)
+      |                    ^~
+treemap.c:152:26: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  152 |                     a = a->right;
+      |                          ^~
+treemap.c:155:29: error: ‘aux’ undeclared (first use in this function)
+  155 |         if(tree->lower_than(aux->pair->key,node->pair->key)==1) aux->right = a;
+      |                             ^~~
+treemap.c:155:29: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:155:78: error: ‘a’ undeclared (first use in this function)
+  155 |         if(tree->lower_than(aux->pair->key,node->pair->key)==1) aux->right = a;
+      |                                                                              ^
+29b520c
