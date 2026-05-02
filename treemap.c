@@ -144,7 +144,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
         a = minimum(a);
         nodo->pair->key = a->pair->key;
         nodo->pair->value = a->pair->value;
-        removeNode(a);
+        removeNode(tree,a);
     }
     else
     {   
