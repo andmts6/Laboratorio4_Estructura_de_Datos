@@ -455,3 +455,9 @@ treemap.c:145:9: error: ‘nodo’ undeclared (first use in this function); did 
       |         node
 treemap.c:145:9: note: each undeclared identifier is reported only once for each function it appears in
 610770d
+Sat May  2 05:27:29 AM UTC 2026: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  22|2
+total_score: 45/60
+12ae9f3

@@ -142,8 +142,8 @@ void removeNode(TreeMap * tree, TreeNode* node)
     {
         TreeNode *a = node->right;
         a = minimum(a);
-        nodo->pair->key = a->pair->key;
-        nodo->pair->value = a->pair->value;
+        node->pair->key = a->pair->key;
+        node->pair->value = a->pair->value;
         removeNode(tree,a);
     }
     else
