@@ -154,6 +154,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
     {   
         
         TreeNode *a = NULL;
+        //por derecha o izquierda
         if(node->right !=NULL)
         {
             a = node->right;
@@ -174,6 +175,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
                 free(node);
                 return;
             }
+        //caso normal
         if(tree->lower_than(node->parent->pair->key,node->pair->key)==1) node->parent->right = a;
         else node->parent->left = a;
         a->parent = node->parent;
@@ -251,5 +253,3 @@ Pair * upperBound(TreeMap * tree, void* key)
         }
     return x;
 }
-
-
